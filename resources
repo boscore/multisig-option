@@ -1,0 +1,25 @@
+# bos上低保资源通过多签进行修改
+
+## bos低保说明
+- 系统默认的低保设置是cpu=200ms net=10kib；
+- 每次增加：步长cpu：10*1000、net：10*1024，最大资源是cpu：100*1000 us、net：100*1024 byte
+
+
+
+
+
+
+
+## 具体操作
+
+开始多签操作：
+
+```
+1) cleos multisig propose setmingura2 bppermission.json '[{"actor": "eosio", "permission": "active"}]'  eosio  setguaminres  '{"ram":0,"cpu":2048,"net":2048}'  boscorebos11 168
+
+2)cleos multisig approve  boscorebos11 setmingura  '{"actor":"boscorebos11","permission":"active"}'  -p  boscorebos11
+
+3) cleos multisig exec boscorebos11 setmingura2 eosio
+```
+
+
